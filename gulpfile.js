@@ -1,11 +1,15 @@
-/*
- *
- *
- */
+/**
+* @type      gulp in action
+* @file      gulpfile.css
+* @author:   by fanyong@gmail.com
+* @update:   2015-06-02
+*
+*/
 
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var del = require('del');
 
 var paths = {
 	scripts: ['src/scripts/**/*.js', '!src/scripts/external/**/*.js'],
@@ -22,10 +26,19 @@ gulp.task('clean', function(cb) {
 
 gulp.task('scripts', ['clean'], function() {
 	// 1. Minify and copy all JavaScript (except vendor scripts)
+
+	var options = {
+		mangle: true,
+		compress: {
+			drop_console: true,
+			drop_debugger: true
+		}
+	};
+
 	return gulp.src(paths.scripts)
-		.pipe(uglify())
+		.pipe(uglify(options))
 		.pipe(concat('all.min.js'))
-		.pipe(gulp.dest('build.js'));
+		.pipe(gulp.dest('build'));
 });
 
 // Rerun the task when a file changes
