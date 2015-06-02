@@ -28,10 +28,16 @@ gulp.task('scripts', ['clean'], function() {
 	// 1. Minify and copy all JavaScript (except vendor scripts)
 
 	var options = {
+		// 是否混淆变量名
 		mangle: true,
+		// 压缩选项
 		compress: {
-			drop_console: true,
-			drop_debugger: true
+			drop_console: true, // 非常有用，上线前去掉console信息
+			drop_debugger: true // 去掉debugger调试语句
+		},
+		// 是否压缩代码
+		output: {
+			beautify: false
 		}
 	};
 

@@ -9,6 +9,8 @@ define('js/view/list', ['js/util/api/baseApi'], function(Api) {
 
         initialize: function(options, config) {
             this.render();
+
+            console.log('test initialize');
         },
 
         render: function() {
@@ -19,6 +21,9 @@ define('js/view/list', ['js/util/api/baseApi'], function(Api) {
 
             $('header.logo').show();
             self._loadData();
+            
+            console.log('test render');
+
         }        
     });
 
