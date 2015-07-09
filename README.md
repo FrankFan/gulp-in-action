@@ -1,5 +1,5 @@
 # gulp-in-action
-learn how to play gulp 
+learn how to play with gulp 
 
 
 ## prepare & install
@@ -20,6 +20,5 @@ learn how to play gulp
 
 ```bash
 $ gulp # 执行watch和scripts任务
-
 
 ```
