@@ -14,3 +14,12 @@ learn how to play gulp
 
 ## config
 参考`gulpfile.js`文件
+
+
+## how use
+
+```bash
+$ gulp # 执行watch和scripts任务
+
+
+```
