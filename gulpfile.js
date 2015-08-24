@@ -10,10 +10,14 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var del = require('del');
+var connect = require('gulp-connect');
+var server = require('gulp-server-livereload');
 
 var paths = {
 	scripts: ['src/scripts/**/*.js', '!src/scripts/external/**/*.js'],
-	images: 'src/img/**/*'
+	images: 'src/img/**/*',
+	html: 'src/index.html',
+	app: 'src/'
 };
 
 
@@ -21,6 +25,9 @@ var paths = {
 // A gulpfile is just another node program and you can use all packages available on npm
 gulp.task('clean', function(cb) {
   // You can use multiple globbing patterns as you would with `gulp.src`
+
+  console.log('delete');
+
   del(['build'], cb);
 });
 
@@ -49,10 +56,38 @@ gulp.task('scripts', ['clean'], function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
+	console.log('看我');
+	
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.images, ['images']);
+	gulp.watch(paths.html, ['html']);
+
 });
 
+// gulp.task('connect', function() {
+//   connect.server();
+// });
+
+gulp.task('server', function() {
+  connect.server({
+    // root: 'src',
+    port: 8888,
+    livereload: true
+  });
+});
+
+
+// See https://github.com/hiddentao/gulp-server-livereload
+gulp.task('webserver', function() {
+  gulp.src(paths.app)
+    .pipe(server({
+      livereload: true,
+      directoryListing: false,
+      defaultFile: 'index.html',
+      open: true,
+      log: 'debug'
+    }));
+});
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['watch', 'scripts']);
