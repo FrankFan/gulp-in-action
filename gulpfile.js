@@ -14,7 +14,7 @@ var connect = require('gulp-connect');
 var server = require('gulp-server-livereload');
 
 var paths = {
-	scripts: ['src/scripts/**/*.js', '!src/scripts/external/**/*.js'],
+	scripts: ['src/scripts/**/*.js', '!src/scripts/vendor/**/*.js'],
 	images: 'src/img/**/*',
 	html: 'src/index.html',
 	app: 'src/'
