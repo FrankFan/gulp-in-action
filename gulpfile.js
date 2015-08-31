@@ -10,7 +10,6 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var del = require('del');
-var connect = require('gulp-connect');
 var server = require('gulp-server-livereload');
 
 var paths = {
@@ -63,10 +62,6 @@ gulp.task('watch', function() {
 	gulp.watch(paths.html, ['html']);
 
 });
-
-// gulp.task('connect', function() {
-//   connect.server();
-// });
 
 gulp.task('server', function() {
   connect.server({
