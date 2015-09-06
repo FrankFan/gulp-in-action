@@ -1,5 +1,8 @@
 define(['test'], function() {
-	var todo = {a:123};
+	var todo = {
+		model: 123,
+		view: todo
+	};
 
 	return todo;
 });

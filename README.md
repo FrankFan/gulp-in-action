@@ -46,6 +46,9 @@ File objects piped to this are saved to the file system
 
 Congratulations
 You are now a gulp expert.
+
+参考：
+![gulp API](https://github.com/gulpjs/gulp/blob/master/docs%2FAPI.md)
 ![http://slides.com/contra/gulp](http://slides.com/contra/gulp)
 
 ##  插件
