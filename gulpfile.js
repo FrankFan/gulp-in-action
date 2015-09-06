@@ -19,6 +19,9 @@ var paths = {
 	app: 'src/'
 };
 
+// Use gulp-stats 
+require('gulp-stats')(gulp);
+
 
 // Not all tasks need to use streams
 // A gulpfile is just another node program and you can use all packages available on npm
@@ -55,20 +58,11 @@ gulp.task('scripts', ['clean'], function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-	console.log('看我');
 	
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.images, ['images']);
 	gulp.watch(paths.html, ['html']);
 
-});
-
-gulp.task('server', function() {
-  connect.server({
-    // root: 'src',
-    port: 8888,
-    livereload: true
-  });
 });
 
 

@@ -11,7 +11,8 @@
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",
     "gulp-uglify": "^1.2.0",
-    "gulp-server-livereload": ""
+    "gulp-server-livereload": "",
+    "gulp-stats": "^0.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
