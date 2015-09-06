@@ -1,6 +1,6 @@
 /**
 * @type      gulp in action
-* @file      gulpfile.css
+* @file      gulpfile.js
 * @author:   by fanyong@gmail.com
 * @update:   2015-06-02
 *
@@ -19,7 +19,7 @@ var paths = {
 	app: 'src/'
 };
 
-// Use gulp-stats 
+// 统计task的插件
 require('gulp-stats')(gulp);
 
 
